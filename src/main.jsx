@@ -7,6 +7,9 @@ import Cart from './Cart.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+
+//https://reactrouter.com/en/main/hooks/use-outlet-context
+//https://stackoverflow.com/questions/73816951/how-to-provide-dynamic-custom-props-to-react-router-6-4-route
 const router = createBrowserRouter([
   {
     path: "/",
