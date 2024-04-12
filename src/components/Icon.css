@@ -1,0 +1,10 @@
+.cart-icon,
+.egg-icon {
+  width: 50px;
+  fill: hsl(298, 33%, 41%);
+}
+
+.home-icon {
+  width: 65px;
+  fill: hsl(298, 33%, 41%);
+}

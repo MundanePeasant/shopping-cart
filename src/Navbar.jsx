@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import CartIcon from "./components/CartIcon";
 import EggIcon from "./components/EggIcon";
 import HomeIcon from "./components/HomeIcon";
+import './Navbar.css';
 
 function Navbar() {
     return (
-        <div>
+        <div className="nav">
             <Link to={``}>
                 <HomeIcon />
             </Link>
