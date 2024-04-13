@@ -11,6 +11,7 @@ const usePokemonFetch = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
+  const pokemonSet = new Set();
 
   useEffect(() => {
     for (let i = 0; i <= 30; i += 1) {
@@ -22,31 +23,41 @@ const usePokemonFetch = () => {
           return response.json();
         })
         .then(response => {
-          const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${response.chain.species.name}`;
-          fetch(pokemonURL, { mode: 'cors' }).then(pokemonResponse =>
-            pokemonResponse
-              .json()
-              .then(pokemonJSON => {
-                const name = pokemonJSON['name'];
-                const imageURL = pokemonJSON['sprites']['front_default'];
-                const weight = pokemonJSON['weight'];
-                const baseStats =
-                  parseInt(pokemonJSON['stats']['0']['base_stat']) +
-                  parseInt(pokemonJSON['stats']['1']['base_stat']) +
-                  parseInt(pokemonJSON['stats']['2']['base_stat']) +
-                  parseInt(pokemonJSON['stats']['3']['base_stat']) +
-                  parseInt(pokemonJSON['stats']['4']['base_stat']) +
-                  parseInt(pokemonJSON['stats']['5']['base_stat']);
+          const foundName = response.chain.species.name;
+          if (!pokemonSet.has(foundName)) {
+            pokemonSet.add(foundName);
 
-                const pokemon = new Pokemon(name, imageURL, weight, baseStats);
+            const pokemonURL = `https://pokeapi.co/api/v2/pokemon/${foundName}`;
+            fetch(pokemonURL, { mode: 'cors' }).then(pokemonResponse =>
+              pokemonResponse
+                .json()
+                .then(pokemonJSON => {
+                  const name = pokemonJSON['name'];
+                  const imageURL = pokemonJSON['sprites']['front_default'];
+                  const weight = pokemonJSON['weight'];
+                  const baseStats =
+                    parseInt(pokemonJSON['stats']['0']['base_stat']) +
+                    parseInt(pokemonJSON['stats']['1']['base_stat']) +
+                    parseInt(pokemonJSON['stats']['2']['base_stat']) +
+                    parseInt(pokemonJSON['stats']['3']['base_stat']) +
+                    parseInt(pokemonJSON['stats']['4']['base_stat']) +
+                    parseInt(pokemonJSON['stats']['5']['base_stat']);
 
-                setPokemonList(pokemonList => [...pokemonList, pokemon]);
-              })
-              .catch(error => {
-                setError(error);
-                throw error;
-              }),
-          );
+                  const pokemon = new Pokemon(
+                    name,
+                    imageURL,
+                    weight,
+                    baseStats,
+                  );
+
+                  setPokemonList(pokemonList => [...pokemonList, pokemon]);
+                })
+                .catch(error => {
+                  setError(error);
+                  throw error;
+                }),
+            );
+          }
         })
         .catch(error => setError(error))
         .finally(() => setLoading(false));
