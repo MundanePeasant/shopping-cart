@@ -15,6 +15,7 @@ const usePokemonFetch = () => {
 
   useEffect(() => {
     for (let i = 0; i <= 30; i += 1) {
+      //first fetch to find the first evolutionary pokemon in their respective chains
       fetch(`https://pokeapi.co/api/v2/evolution-chain/${i}`, { mode: 'cors' })
         .then(response => {
           if (response.status >= 400) {
@@ -24,6 +25,8 @@ const usePokemonFetch = () => {
         })
         .then(response => {
           const foundName = response.chain.species.name;
+
+          //checks if the pokemon is already been called, if not, moves on to another fetch to get more data
           if (!pokemonSet.has(foundName)) {
             pokemonSet.add(foundName);
 
@@ -43,6 +46,7 @@ const usePokemonFetch = () => {
                     parseInt(pokemonJSON['stats']['4']['base_stat']) +
                     parseInt(pokemonJSON['stats']['5']['base_stat']);
 
+                  //initiates a new Pokemon object and then updates the Pokemon List state
                   const pokemon = new Pokemon(
                     name,
                     imageURL,
