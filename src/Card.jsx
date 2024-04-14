@@ -1,4 +1,5 @@
 import './Card.css';
+import './assets/fonts/fonts.css';
 
 function Card({ pokemon }) {
   const { name, imageURL, weight, baseStats } = pokemon;
@@ -7,7 +8,7 @@ function Card({ pokemon }) {
     <div className="card">
       <img src={imageURL} alt={name} />
       <div className="row-one">
-        <h2>{name}</h2>
+        <h2>{name.toUpperCase()}</h2>
         <div className="card-sub-info">
           <p>{baseStats}</p>
           <p>{weight}</p>
