@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.row-one {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-sub-info {
+    margin-left: auto;
+}
+
+.row-two {
+  display: flex;
+  flex-direction: row;
+}
+
+.increment-decrement {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+    margin-left: auto;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}

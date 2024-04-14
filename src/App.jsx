@@ -14,7 +14,7 @@ const usePokemonFetch = () => {
   const pokemonSet = new Set();
 
   useEffect(() => {
-    for (let i = 0; i <= 30; i += 1) {
+    for (let i = 1; i <= 30; i += 1) {
       //first fetch to find the first evolutionary pokemon in their respective chains
       fetch(`https://pokeapi.co/api/v2/evolution-chain/${i}`, { mode: 'cors' })
         .then(response => {
@@ -76,13 +76,19 @@ function App() {
   //Calling Pokemon API and receiving the first N amount of pokemon which hatch from eggs (aka not yet evolved)
   const { pokemonList, error, loading } = usePokemonFetch();
 
-  if (error) return <p>A network error was encountered</p>;
+  if (error)
+    return (
+      <div>
+        <Navbar />
+        <p>A network error was encountered</p>
+      </div>
+    );
   if (loading) return <p>Loading...</p>;
 
   return (
     <>
       <Navbar />
-      <Outlet />
+      <Outlet context={pokemonList} />
     </>
   );
 }
