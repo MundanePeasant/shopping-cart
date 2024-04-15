@@ -38,20 +38,30 @@ const usePokemonFetch = () => {
                   const name = pokemonJSON['name'];
                   const imageURL = pokemonJSON['sprites']['front_default'];
                   const weight = pokemonJSON['weight'];
-                  const baseStats =
-                    parseInt(pokemonJSON['stats']['0']['base_stat']) +
-                    parseInt(pokemonJSON['stats']['1']['base_stat']) +
-                    parseInt(pokemonJSON['stats']['2']['base_stat']) +
-                    parseInt(pokemonJSON['stats']['3']['base_stat']) +
-                    parseInt(pokemonJSON['stats']['4']['base_stat']) +
-                    parseInt(pokemonJSON['stats']['5']['base_stat']);
+                  const hp = parseInt(pokemonJSON['stats']['0']['base_stat']);
+                  const att = parseInt(pokemonJSON['stats']['1']['base_stat']);
+                  const def = parseInt(pokemonJSON['stats']['2']['base_stat']);
+                  const specAtt = parseInt(
+                    pokemonJSON['stats']['3']['base_stat'],
+                  );
+                  const specDef = parseInt(
+                    pokemonJSON['stats']['4']['base_stat'],
+                  );
+                  const speed = parseInt(
+                    pokemonJSON['stats']['5']['base_stat'],
+                  );
 
                   //initiates a new Pokemon object and then updates the Pokemon List state
                   const pokemon = new Pokemon(
                     name,
                     imageURL,
                     weight,
-                    baseStats,
+                    hp,
+                    att,
+                    def,
+                    specAtt,
+                    specDef,
+                    speed,
                   );
 
                   setPokemonList(pokemonList => [...pokemonList, pokemon]);
