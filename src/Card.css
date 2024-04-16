@@ -25,13 +25,16 @@ h2 {
 }
 
 .card-sub-info {
-  margin-left: auto;
   font-family: 'League Gothic', sans-serif;
   font-size: 24px;
   color: hsl(94, 18%, 35%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
-.row-two {
+.row-two,
+.row-three {
   display: flex;
   flex-direction: row;
 }
