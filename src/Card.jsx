@@ -1,5 +1,6 @@
 import './Card.css';
 import './assets/fonts/fonts.css';
+import MoneyIcon from './components/MoneyIcon';
 
 function Card({ pokemon }) {
   const { name, imageURL, weight, hp, att, def, specAtt, specDef, speed } =
@@ -21,7 +22,10 @@ function Card({ pokemon }) {
       </div>
       <div className="row-two">
         <h2>{name.toUpperCase()}</h2>
-        <h3>{baseStats + weight}</h3>
+        <div className="cost">
+          <MoneyIcon />
+          <h3>{baseStats + weight}</h3>
+        </div>
       </div>
 
       <div className="row-three">

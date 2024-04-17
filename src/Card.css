@@ -24,6 +24,12 @@ h2 {
   align-self: baseline;
 }
 
+h3 {
+  text-align: center;
+  margin: auto;
+  font-size: 32px;
+}
+
 .card-sub-info {
   font-family: 'League Gothic', sans-serif;
   font-size: 24px;
@@ -37,11 +43,20 @@ h2 {
 .row-three {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .increment-decrement {
   display: flex;
   flex-direction: row;
+}
+
+.cost {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  margin-left: auto;
 }
 
 button {
