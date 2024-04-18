@@ -28,6 +28,7 @@ h3 {
   text-align: center;
   margin: auto;
   font-size: 32px;
+  color: hsl(120, 1%, 21%);
 }
 
 .card-sub-info {
@@ -57,6 +58,11 @@ h3 {
   justify-content: center;
   height: 100%;
   margin-left: auto;
+}
+
+.stat-display {
+  display: flex;
+  flex-direction: row;
 }
 
 button {

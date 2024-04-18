@@ -1,6 +1,12 @@
 import './Card.css';
 import './assets/fonts/fonts.css';
 import MoneyIcon from './components/MoneyIcon';
+import HealthIcon from './components/HealthIcon';
+import SpecDefIcon from './components/SpecDefIcon';
+import DefIcon from './components/DefIcon';
+import SpeedIcon from './components/SpeedIcon';
+import SpecAttIcon from './components/SpecAttIcon';
+import AttIcon from './components/AttIcon';
 
 function Card({ pokemon }) {
   const { name, imageURL, weight, hp, att, def, specAtt, specDef, speed } =
@@ -12,12 +18,30 @@ function Card({ pokemon }) {
       <div className="row-one">
         <img src={imageURL} alt={name} />
         <div className="card-sub-info">
-          <p>{hp}</p>
-          <p>{att}</p>
-          <p>{def}</p>
-          <p>{specAtt}</p>
-          <p>{specDef}</p>
-          <p>{speed}</p>
+          <div className="stat-display">
+            <HealthIcon />
+            <p>{hp}</p>
+          </div>
+          <div className="stat-display">
+            <AttIcon />
+            <p>{att}</p>
+          </div>
+          <div className="stat-display">
+            <DefIcon />
+            <p>{def}</p>
+          </div>
+          <div className="stat-display">
+            <SpecAttIcon />
+            <p>{specAtt}</p>
+          </div>
+          <div className="stat-display">
+            <SpecDefIcon />
+            <p>{specDef}</p>
+          </div>
+          <div className="stat-display">
+            <SpeedIcon />
+            <p>{speed}</p>
+          </div>
         </div>
       </div>
       <div className="row-two">
