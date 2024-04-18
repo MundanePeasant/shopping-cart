@@ -54,11 +54,11 @@ function Card({ pokemon }) {
 
       <div className="row-three">
         <div className="increment-decrement">
-          <div>+</div>
+          <button className="inc-dec">+</button>
           <div>#</div>
-          <div>-</div>
+          <button className="inc-dec">-</button>
         </div>
-        <button>Add to Cart!</button>
+        <button className="add-to-cart">Add to Cart!</button>
       </div>
     </div>
   );

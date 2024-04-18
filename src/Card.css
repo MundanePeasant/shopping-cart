@@ -38,6 +38,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  width: 100%;
 }
 
 .row-two,
@@ -47,9 +48,18 @@ h3 {
   justify-content: center;
 }
 
+.row-three {
+  justify-content: space-between;
+}
+
 .increment-decrement {
   display: flex;
   flex-direction: row;
+  width: 30%;
+}
+
+.increment-decrement > div {
+  margin: auto;
 }
 
 .cost {
@@ -63,10 +73,53 @@ h3 {
 .stat-display {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
 
-button {
+.stat-display > p {
+  margin: auto;
+}
+
+.inc-dec {
+  width: 30px;
+  height: 30px;
+  background-color: hsl(96 22% 59%);
+  color: hsl(120, 1%, 21%);
+  font-weight: 900;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.05s ease-in-out;
+}
+
+.inc-dec:hover {
+  transform: scale(1.1);
+}
+
+.add-to-cart {
   margin-left: auto;
+}
+
+.add-to-cart {
+  margin-left: auto;
+  background-color: hsl(340, 86%, 77%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  transition:
+    transform 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+.add-to-cart:hover {
+  transform: scale(1.05);
+  background-color: hsl(340, 70%, 70%);
 }
 
 img {
