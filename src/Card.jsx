@@ -1,5 +1,6 @@
 import './Card.css';
 import './assets/fonts/fonts.css';
+import { useState } from 'react';
 import MoneyIcon from './components/MoneyIcon';
 import HealthIcon from './components/HealthIcon';
 import SpecDefIcon from './components/SpecDefIcon';
@@ -8,10 +9,20 @@ import SpeedIcon from './components/SpeedIcon';
 import SpecAttIcon from './components/SpecAttIcon';
 import AttIcon from './components/AttIcon';
 
-function Card({ pokemon }) {
+function Card({ pokemon, onClick }) {
   const { name, imageURL, weight, hp, att, def, specAtt, specDef, speed } =
     pokemon;
   const baseStats = hp + att + def + specAtt + specDef + speed;
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  // Decrement the count by 1 (prevent going below 0)
+  const handleDecrement = () => {
+    setCount(Math.max(count - 1, 0));
+  };
 
   return (
     <div className="card">
@@ -54,9 +65,13 @@ function Card({ pokemon }) {
 
       <div className="row-three">
         <div className="increment-decrement">
-          <button className="inc-dec">+</button>
-          <div>#</div>
-          <button className="inc-dec">-</button>
+          <button className="inc-dec" onClick={handleIncrement}>
+            +
+          </button>
+          <div>{count}</div>
+          <button className="inc-dec" onClick={handleDecrement}>
+            -
+          </button>
         </div>
         <button className="add-to-cart">Add to Cart!</button>
       </div>

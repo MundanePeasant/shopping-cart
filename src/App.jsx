@@ -76,7 +76,6 @@ const usePokemonFetch = () => {
         .catch(error => setError(error))
         .finally(() => setLoading(false));
     }
-    console.log(pokemonList);
   }, []);
 
   return { pokemonList, error, loading };
@@ -85,6 +84,23 @@ const usePokemonFetch = () => {
 function App() {
   //Calling Pokemon API and receiving the first N amount of pokemon which hatch from eggs (aka not yet evolved)
   const { pokemonList, error, loading } = usePokemonFetch();
+  //State to store what is in the cart & its count
+  const [cartCount, setCartCount] = useState([]);
+
+  function addToCart(key, val) {
+    //check if the pokemon is already in the array. If yes, then add the count to the value present
+    if (cartCount.some(pokemon => pokemon.name === key)) {
+      const updatedCart = cartCount.map(pokemon => {
+        if (pokemon.name === key) {
+          return { ...pokemon, count: pokemon.count + val };
+        }
+        setCartCount(updatedCart);
+      });
+    } else {
+      const newAddition = { name: key, count: val };
+      setCartCoiunt([...cartCount, newAddition]);
+    }
+  }
 
   if (error)
     return (
@@ -98,7 +114,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Outlet context={pokemonList} />
+      <Outlet context={[pokemonList, addToCart]} />
     </>
   );
 }

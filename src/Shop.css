@@ -1,0 +1,10 @@
+.shop {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
