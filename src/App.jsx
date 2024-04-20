@@ -94,8 +94,8 @@ function App() {
         if (pokemon.name === key) {
           return { ...pokemon, count: pokemon.count + val };
         }
-        setCart(updatedCart);
       });
+      setCart(updatedCart);
     } else {
       const newAddition = { name: key, count: val };
       setCart([...cart, newAddition]);
