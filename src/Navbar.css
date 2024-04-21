@@ -1,12 +1,33 @@
 .nav {
-  background-color: hsl(96 22% 59%);
+  background-color: hsl(94, 18%, 35%);
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   align-content: center;
   box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  width: 100%;
+    rgba(191, 156, 226, 0.4) 0px 4px 6px -1px,
+    rgba(191, 156, 226, 0.6) 0px 2px 4px -1px;
+  width: 70%;
   padding-left: 15%;
   padding-right: 15%;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid hsl(59, 40%, 91%);
+  border-radius: 10px;
+  margin-left: 32px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.nav-item > div {
+  margin: auto;
+}
+
+.logo {
+  margin-right: auto;
+  width: 100px;
+  height: 80px;
 }

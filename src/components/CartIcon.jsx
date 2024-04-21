@@ -7,7 +7,7 @@ function CartIcon({ color }) {
       fill={color}
       xmlns="http://www.w3.org/2000/svg"
       data-name="Capa 1"
-      viewBox="0 0 50 62.5"
+      viewBox="0 -5 50 62.5"
       x="0px"
       y="0px"
     >

@@ -1,12 +1,15 @@
-.cart-icon,
+.cart-icon {
+  width: 40px;
+  fill: hsl(59, 40%, 91%);
+}
+
 .egg-icon {
-  width: 50px;
-  fill: hsl(298, 33%, 41%);
+  width: 38px;
 }
 
 .home-icon {
-  width: 65px;
-  fill: hsl(298, 33%, 41%);
+  width: 56px;
+  fill: hsl(59, 40%, 91%);
 }
 
 .money-icon {
