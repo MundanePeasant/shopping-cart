@@ -1,17 +1,14 @@
 import { useOutletContext } from 'react-router-dom';
+import CartCard from './CartCard';
+import './Cart.css';
 
 function Cart() {
   const [pokemonList, addToCart, cart] = useOutletContext();
-  console.log(cart);
 
   return (
-    <>
-      <h2>This is the Cart</h2>
-      {cart.map(pokemon => (
-        <div>{pokemon.name}</div>
-      ))}
-      ;
-    </>
+    <div className='cart'>
+      <CartCard cart={cart} />
+    </div>
   );
 }
 

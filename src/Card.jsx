@@ -73,7 +73,7 @@ function Card({ pokemon, onClick }) {
             -
           </button>
         </div>
-        <button className="add-to-cart" onClick={() => onClick(name, count)}>
+        <button className="add-to-cart" onClick={() => onClick(pokemon, count)}>
           Add to Cart!
         </button>
       </div>

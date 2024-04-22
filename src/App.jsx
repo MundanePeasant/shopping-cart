@@ -87,17 +87,31 @@ function App() {
   //State to store what is in the cart & its count
   const [cart, setCart] = useState([]);
 
-  function addToCart(key, val) {
+  function addToCart(pokeObj, val) {
+    const price =
+      pokeObj.hp +
+      pokeObj.att +
+      pokeObj.specAtt +
+      pokeObj.def +
+      pokeObj.specDef +
+      pokeObj.speed +
+      pokeObj.weight;
+
     //check if the pokemon is already in the array. If yes, then add the count to the value present
-    if (cart.some(pokemon => pokemon.name === key)) {
-      const updatedCart = cart.map(pokemon => {
-        if (pokemon.name === key) {
-          return { ...pokemon, count: pokemon.count + val };
-        }
-      });
+    if (cart.some(pokemon => pokemon.name === pokeObj.name)) {
+      const updatedCart = cart.map(pokemon =>
+        pokemon.name === pokeObj.name
+          ? { ...pokemon, count: pokemon.count + val }
+          : pokemon,
+      );
       setCart(updatedCart);
     } else {
-      const newAddition = { name: key, count: val };
+      const newAddition = {
+        name: pokeObj.name,
+        img: pokeObj.imageURL,
+        cost: price,
+        count: val,
+      };
       setCart([...cart, newAddition]);
     }
   }

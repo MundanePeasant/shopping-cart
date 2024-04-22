@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  align-content: center;
+  align-items: center;
   box-shadow:
     rgba(191, 156, 226, 0.4) 0px 4px 6px -1px,
     rgba(191, 156, 226, 0.6) 0px 2px 4px -1px;
@@ -20,14 +20,24 @@
   margin-left: 32px;
   margin-top: 16px;
   margin-bottom: 16px;
+  width: 100px;
+  height: 50px;
+  padding: 8px;
 }
 
 .nav-item > div {
   margin: auto;
+  text-decoration: none;
+  color: hsl(59, 40%, 91%);
+  border-bottom: none;
 }
 
 .logo {
   margin-right: auto;
   width: 100px;
   height: 80px;
+}
+
+a {
+  text-decoration: none;
 }

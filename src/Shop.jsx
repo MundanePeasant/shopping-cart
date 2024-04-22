@@ -7,7 +7,6 @@ function Shop() {
 
   return (
     <div className="shop">
-      <h2>This is the Shop</h2>
       <div className="card-container">
         {pokemonList.map(pokemon => (
           <Card pokemon={pokemon} key={pokemon.name} onClick={addToCart} />
