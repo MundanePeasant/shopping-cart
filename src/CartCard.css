@@ -1,12 +1,35 @@
 .cart-card {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    background-color: hsl(59, 40%, 91%);
-    border-radius: 20px;
-    box-shadow:
-      hsl(96 22% 59%) 0px 10px 20px,
-      hsl(96 22% 59%) 0px 6px 6px;
-    margin: 16px;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  background-color: hsl(59, 40%, 91%);
+  border-radius: 20px;
+  box-shadow:
+    hsl(96 22% 59%) 0px 10px 20px,
+    hsl(96 22% 59%) 0px 6px 6px;
+  margin: 16px;
+  align-items: center;
 }
 
+.count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.inc-dec {
+  width: 30px;
+  height: 30px;
+  background-color: hsl(96 22% 59%);
+  color: hsl(120, 1%, 21%);
+  font-weight: 900;
+  font-size: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.05s ease-in-out;
+}
+
+.inc-dec:hover {
+  transform: scale(1.1);
+}

@@ -9,9 +9,15 @@ function CartCard({ cart }) {
       {cartList.map(pokemon => (
         <div key={pokemon.name} className="cart-card">
           <img src={pokemon.img} alt={pokemon.name} />
-          <div>{pokemon.name}</div>
-          <div>{pokemon.count}</div>
-          <div>{pokemon.cost}</div>
+          <div className="name">{pokemon.name.toUpperCase()}</div>
+          <div className='count'>
+            <button className="inc-dec">+</button>
+            <div>{pokemon.count}</div>
+            <button className="inc-dec">-</button>
+          </div>
+
+          <div>{pokemon.cost * pokemon.count}</div>
+          <button>X</button>
         </div>
       ))}
     </>

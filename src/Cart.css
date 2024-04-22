@@ -5,3 +5,12 @@
   flex-direction: column;
   align-items: center;
 }
+
+.name {
+  font-family: 'League Gothic', sans-serif;
+  font-size: 52px;
+  color: hsl(94, 18%, 35%);
+  align-self: baseline;
+  margin-top: auto;
+  margin-bottom: auto;
+}
