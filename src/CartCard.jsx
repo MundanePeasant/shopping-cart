@@ -9,8 +9,12 @@ function CartCard({ cart, editCart, deleteFromCart }) {
     <>
       {cartList.map(pokemon => (
         <div key={pokemon.name} className="cart-card">
-          <img src={pokemon.img} alt={pokemon.name} />
-          <div className="name">{pokemon.name.toUpperCase()}</div>
+          <div className='pokemon'> 
+            {' '}
+            <img src={pokemon.img} alt={pokemon.name} />
+            <div className="name">{pokemon.name.toUpperCase()}</div>
+          </div>
+
           <div className="count">
             <button
               className="inc-dec"
@@ -26,12 +30,17 @@ function CartCard({ cart, editCart, deleteFromCart }) {
               -
             </button>
           </div>
-          <div>
+          <div className="cost-container">
             <MoneyIcon />
             <div>{pokemon.cost * pokemon.count}</div>
           </div>
 
-          <button onClick={() => deleteFromCart(pokemon)}>X</button>
+          <button
+            onClick={() => deleteFromCart(pokemon)}
+            className="delete-button"
+          >
+            X
+          </button>
         </div>
       ))}
     </>

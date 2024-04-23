@@ -1,6 +1,7 @@
 .cart-card {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 80%;
   background-color: hsl(59, 40%, 91%);
   border-radius: 20px;
@@ -11,10 +12,22 @@
   align-items: center;
 }
 
+.pokemon {
+  display: flex;
+  flex-direction: row;
+}
+
 .count {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.count > div {
+  font-size: 32px;
+  color: hsl(120, 1%, 21%);
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .inc-dec {
@@ -32,4 +45,37 @@
 
 .inc-dec:hover {
   transform: scale(1.1);
+}
+
+.delete-button {
+  /* Base styles */
+  background-color: #92010191; /* Red color */
+  color: white;
+  font-size: 1.2rem; /* Adjust font size as needed */
+  border: none;
+  padding: 5px; /* Adjust padding as needed */
+  border-radius: 50%; /* For a circular shape */
+  cursor: pointer; /* Indicate clickable behavior */
+  width: 25px; /* Adjust width as needed */
+  height: 25px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.delete-button:hover {
+  /* Hover effect */
+  background-color: #c00000; /* Darker red on hover */
+  box-shadow: 0 0 2px #ff0000; /* Optional subtle shadow on hover */
+}
+
+.cost-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.cost-container > div {
+  font-size: 32px;
+  color: hsl(120, 1%, 21%);
 }
