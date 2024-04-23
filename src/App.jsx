@@ -116,6 +116,21 @@ function App() {
     }
   }
 
+  function editCart(pokeObj, val) {
+    if (val === -1) {
+      return;
+    }
+    const updatedCart = cart.map(pokemon =>
+      pokemon.name === pokeObj.name ? { ...pokemon, count: val } : pokemon,
+    );
+    setCart(updatedCart);
+  }
+
+  function deleteFromCart(pokeObj) {
+    const filtered = cart.filter(pokemon => pokemon.name !== pokeObj.name);
+    setCart(filtered);
+  }
+
   if (error)
     return (
       <div>
@@ -128,7 +143,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Outlet context={[pokemonList, addToCart, cart]} />
+      <Outlet
+        context={[pokemonList, addToCart, cart, editCart, deleteFromCart]}
+      />
     </>
   );
 }
